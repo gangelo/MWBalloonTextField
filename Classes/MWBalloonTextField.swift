@@ -7,84 +7,44 @@
 import UIKit
 
 @IBDesignable public class MWBalloonTextField: UITextField {
+   fileprivate var _textFieldProfile:MWBalloonTextFieldProfileProtocol = MWDefaultBalloonTextFieldErrorProfile()
+   fileprivate var _balloonProfile:MWBalloonProfileProtocol = MWDefaultBalloonErrorProfile()
    fileprivate var _imageView:UIView?
-   
-   @IBInspectable var successImage:UIImage? = nil
-   @IBInspectable var errorImage:UIImage? = nil
    
    override init(frame: CGRect) {
       super.init(frame: frame)
-      self.initialize()
    }
 
    required public init(coder aDecoder: NSCoder) {
       super.init(coder: aDecoder)!
-      self.initialize()
    }
    
-   func initialize() {
-      if successImage == nil {
-         self.attachDefaultSuccessImage()
-      }
-      
-      if errorImage == nil {
-         self.attachDefaultErrorImage()
-      }
+   // Attaches a profile to this text field.
+   open func attach(textFieldProfile:MWBalloonTextFieldProfileProtocol, balloonProfile:MWBalloonProfileProtocol) {
+      self._textFieldProfile = textFieldProfile
+      self._balloonProfile = balloonProfile
    }
-   
-   fileprivate func getGetImageInBundle(named:String) -> UIImage? {
-      let bundle = Bundle(for: type(of: self))
-      return UIImage(named: named, in: bundle, compatibleWith: nil)
-   }
-   
-   fileprivate func attachDefaultErrorImage() {
-      self.errorImage = self.getGetImageInBundle(named: "error")
-   }
-   
-   fileprivate func attachDefaultSuccessImage() {
-      self.successImage = self.getGetImageInBundle(named: "success")
-   }
-   
    
    public func setWaiting() {
       self.clear()
-      
-      let imageView:UIImageView = UIImageView()
-      imageView.animationImages = [
-         self.getGetImageInBundle(named: "waiting_0")!,
-         self.getGetImageInBundle(named: "waiting_1")!,
-         self.getGetImageInBundle(named: "waiting_2")!,
-         self.getGetImageInBundle(named: "waiting_3")!,
-         self.getGetImageInBundle(named: "waiting_4")!,
-         self.getGetImageInBundle(named: "waiting_5")!,
-         self.getGetImageInBundle(named: "waiting_6")!,
-         self.getGetImageInBundle(named: "waiting_7")!,
-         self.getGetImageInBundle(named: "waiting_8")!,
-         self.getGetImageInBundle(named: "waiting_9")!,
-         self.getGetImageInBundle(named: "waiting_10")!,
-         self.getGetImageInBundle(named: "waiting_11")!]
-      imageView.animationDuration = 1.0;
-      imageView.animationRepeatCount = 0;
-      
+      let imageView = self._textFieldProfile.waitingImageView
       self.setImage(imageView: imageView)
-      
       imageView.startAnimating()
    }
    
    public func setSuccess() {
       self.clear()
-      self.setImage(image: successImage)
+      self.setImage(image: self._textFieldProfile.successImage)
    }
    
    public func setError(error:String) {
       self.clear()
       
-      self.setImage(image: errorImage)
+      self.setImage(image: self._textFieldProfile.errorImage)
       
       // Create the error balloon for displaying errors.
-      let errorBalloon = UIErrorBalloon(frame: self.frame)
+      let errorBalloon = MWBalloon(frame: self.frame, profile: self._balloonProfile)
       errorBalloon.setFrame(balloonTextField: self)
-      errorBalloon.balloonArrowPosition = getBalloonArrowPosition()
       
       if let imageContainer = self._imageView {
          if let image = imageContainer.subviews.first {
@@ -92,12 +52,11 @@ import UIKit
             let imageViewPos = CGFloat((image.frame.width / 2) / 2)
             let imageViewContainerPos = CGFloat(imageContainer.frame.width / 2)
             
-            errorBalloon.balloonArrowPosition = self.frame.width - (imageViewPos + imageViewContainerPos)
+            errorBalloon.arrowPosition = self.frame.width - (imageViewPos + imageViewContainerPos)
          }
       }
       
-      // This sets the color behind the balloon, so that the actuall balloon can be seen propoerly against the control background. 
-      // errorBalloon.backgroundColor = self.superview?.backgroundColor
+      // This sets the color behind the balloon, so that the actual balloon can be seen propoerly against the control background.
       errorBalloon.backgroundColor = UIColor.clear
       
       // Add the error balloon to the superview.
@@ -106,9 +65,9 @@ import UIKit
       // Create the error label that is used to display the error message inside
       // the balloon.
       var labelFrame = self.frame.offsetBy(dx: 0, dy: self.frame.height)
-      labelFrame.origin.y = labelFrame.origin.y + errorBalloon.balloonArrowSize.height
+      labelFrame.origin.y = labelFrame.origin.y + errorBalloon.arrowSize.height
 
-      let errorLabel = MWBalloonLabel(frame: labelFrame, textColor: errorBalloon.balloonTextColor, fontSize: errorBalloon.balloonFontSize)
+      let errorLabel = MWBalloonLabel(frame: labelFrame, textColor: errorBalloon.textColor, fontSize: errorBalloon.fontSize)
       errorBalloon.addSubview(errorLabel)
       setErrorLabelConstraints(errorLabel: errorLabel, errorBalloon: errorBalloon)
       
@@ -136,7 +95,7 @@ import UIKit
       self.rightViewMode = .always
    }
    
-   func setErrorLabelConstraints(errorLabel:MWBalloonLabel, errorBalloon:UIErrorBalloon) {
+   func setErrorLabelConstraints(errorLabel:MWBalloonLabel, errorBalloon:MWBalloon) {
       // Leading...
       let leading = NSLayoutConstraint(item: errorLabel, attribute: .leftMargin, relatedBy: .equal, toItem: errorBalloon, attribute: .leftMargin, multiplier: 1, constant: errorBalloon.layoutMargins.left)
       
@@ -144,7 +103,7 @@ import UIKit
       let trailing = NSLayoutConstraint(item: errorLabel, attribute: .rightMargin, relatedBy: .equal, toItem: errorBalloon, attribute: .rightMargin, multiplier: 1, constant: errorBalloon.layoutMargins.right)
       
       // Top...
-      let top = NSLayoutConstraint(item: errorLabel, attribute: .topMargin, relatedBy: .equal, toItem: errorBalloon, attribute: .topMargin, multiplier: 1, constant: errorBalloon.layoutMargins.top + errorBalloon.balloonArrowSize.height)
+      let top = NSLayoutConstraint(item: errorLabel, attribute: .topMargin, relatedBy: .equal, toItem: errorBalloon, attribute: .topMargin, multiplier: 1, constant: errorBalloon.layoutMargins.top + self._balloonProfile.arrowSize.height)
       
       errorLabel.translatesAutoresizingMaskIntoConstraints = false
       NSLayoutConstraint.activate([leading, trailing, top])
@@ -152,7 +111,7 @@ import UIKit
    
    public func clear() {
       // Remove any previous error balloons that have been displayed.
-      if let balloon = self.superview?.subviews.filter({ $0 is MWBalloonBase }) {
+      if let balloon = self.superview?.subviews.filter({ $0 is MWBalloon }) {
          balloon.first?.removeFromSuperview()
       }
       

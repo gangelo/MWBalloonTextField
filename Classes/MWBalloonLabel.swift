@@ -41,7 +41,7 @@ class MWBalloonLabel: UILabel {
          if text != nil {
             self.sizeToFit()
             if let balloonView = self.superview {
-               if let view:MWBalloonBase = balloonView as? MWBalloonBase {
+               if let view:MWBalloon = balloonView as? MWBalloon {
                   view.resizeToFitSubviews()
                }
             }

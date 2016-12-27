@@ -9,14 +9,16 @@
 /* Begin PBXBuildFile section */
 		E43555211E0DD39100B59F19 /* MWBalloonTextField.h in Headers */ = {isa = PBXBuildFile; fileRef = E435551F1E0DD39100B59F19 /* MWBalloonTextField.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E43555381E0DD56400B59F19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E43555371E0DD56400B59F19 /* Assets.xcassets */; };
-		E43555421E0DD5F700B59F19 /* MWBalloonProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E435553A1E0DD5F700B59F19 /* MWBalloonProfile.swift */; };
-		E43555431E0DD5F700B59F19 /* MWBalloonProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E435553B1E0DD5F700B59F19 /* MWBalloonProtocol.swift */; };
-		E43555441E0DD5F700B59F19 /* MWBalloonBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E435553C1E0DD5F700B59F19 /* MWBalloonBase.swift */; };
-		E43555451E0DD5F700B59F19 /* MWBalloonDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = E435553D1E0DD5F700B59F19 /* MWBalloonDefault.swift */; };
+		E43555421E0DD5F700B59F19 /* MWDefaultBalloonProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E435553A1E0DD5F700B59F19 /* MWDefaultBalloonProfile.swift */; };
+		E43555431E0DD5F700B59F19 /* MWBalloonProfileProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E435553B1E0DD5F700B59F19 /* MWBalloonProfileProtocol.swift */; };
+		E43555441E0DD5F700B59F19 /* MWBalloon.swift in Sources */ = {isa = PBXBuildFile; fileRef = E435553C1E0DD5F700B59F19 /* MWBalloon.swift */; };
 		E43555461E0DD5F700B59F19 /* MWBalloonLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E435553E1E0DD5F700B59F19 /* MWBalloonLabel.swift */; };
 		E43555471E0DD5F700B59F19 /* MWBalloonTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E435553F1E0DD5F700B59F19 /* MWBalloonTextField.swift */; };
 		E43555481E0DD5F700B59F19 /* UIColor+init.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43555401E0DD5F700B59F19 /* UIColor+init.swift */; };
-		E43555491E0DD5F700B59F19 /* MWErrorBalloon.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43555411E0DD5F700B59F19 /* MWErrorBalloon.swift */; };
+		E4A0536D1E13097600CDE82F /* MWDefaultBalloonErrorProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A0536C1E13097600CDE82F /* MWDefaultBalloonErrorProfile.swift */; };
+		E4A0536F1E130B9A00CDE82F /* MWDefaultBalloonTextFieldErrorProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A0536E1E130B9A00CDE82F /* MWDefaultBalloonTextFieldErrorProfile.swift */; };
+		E4A7AD4E1E12DEA4004B651B /* MWBalloonTextFieldProfileProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A7AD4D1E12DEA4004B651B /* MWBalloonTextFieldProfileProtocol.swift */; };
+		E4A7AD501E12E0B9004B651B /* MWDefaultBalloonTextFieldProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A7AD4F1E12E0B9004B651B /* MWDefaultBalloonTextFieldProfile.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,14 +26,16 @@
 		E435551F1E0DD39100B59F19 /* MWBalloonTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MWBalloonTextField.h; sourceTree = "<group>"; };
 		E43555201E0DD39100B59F19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E43555371E0DD56400B59F19 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		E435553A1E0DD5F700B59F19 /* MWBalloonProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MWBalloonProfile.swift; sourceTree = "<group>"; };
-		E435553B1E0DD5F700B59F19 /* MWBalloonProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MWBalloonProtocol.swift; sourceTree = "<group>"; };
-		E435553C1E0DD5F700B59F19 /* MWBalloonBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MWBalloonBase.swift; sourceTree = "<group>"; };
-		E435553D1E0DD5F700B59F19 /* MWBalloonDefault.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MWBalloonDefault.swift; sourceTree = "<group>"; };
+		E435553A1E0DD5F700B59F19 /* MWDefaultBalloonProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MWDefaultBalloonProfile.swift; sourceTree = "<group>"; };
+		E435553B1E0DD5F700B59F19 /* MWBalloonProfileProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MWBalloonProfileProtocol.swift; sourceTree = "<group>"; };
+		E435553C1E0DD5F700B59F19 /* MWBalloon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MWBalloon.swift; sourceTree = "<group>"; };
 		E435553E1E0DD5F700B59F19 /* MWBalloonLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MWBalloonLabel.swift; sourceTree = "<group>"; };
 		E435553F1E0DD5F700B59F19 /* MWBalloonTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MWBalloonTextField.swift; sourceTree = "<group>"; };
 		E43555401E0DD5F700B59F19 /* UIColor+init.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+init.swift"; sourceTree = "<group>"; };
-		E43555411E0DD5F700B59F19 /* MWErrorBalloon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MWErrorBalloon.swift; sourceTree = "<group>"; };
+		E4A0536C1E13097600CDE82F /* MWDefaultBalloonErrorProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MWDefaultBalloonErrorProfile.swift; sourceTree = "<group>"; };
+		E4A0536E1E130B9A00CDE82F /* MWDefaultBalloonTextFieldErrorProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MWDefaultBalloonTextFieldErrorProfile.swift; sourceTree = "<group>"; };
+		E4A7AD4D1E12DEA4004B651B /* MWBalloonTextFieldProfileProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MWBalloonTextFieldProfileProtocol.swift; sourceTree = "<group>"; };
+		E4A7AD4F1E12E0B9004B651B /* MWDefaultBalloonTextFieldProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MWDefaultBalloonTextFieldProfile.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +70,7 @@
 			isa = PBXGroup;
 			children = (
 				E43555391E0DD5F700B59F19 /* Classes */,
+				E4A7AD4C1E12DAC6004B651B /* Profiles */,
 				E435554B1E0DD79400B59F19 /* Protocols */,
 				E435554A1E0DD78200B59F19 /* Extensions */,
 				E435551F1E0DD39100B59F19 /* MWBalloonTextField.h */,
@@ -78,11 +83,8 @@
 			isa = PBXGroup;
 			children = (
 				E435553F1E0DD5F700B59F19 /* MWBalloonTextField.swift */,
-				E43555411E0DD5F700B59F19 /* MWErrorBalloon.swift */,
-				E435553C1E0DD5F700B59F19 /* MWBalloonBase.swift */,
-				E435553D1E0DD5F700B59F19 /* MWBalloonDefault.swift */,
+				E435553C1E0DD5F700B59F19 /* MWBalloon.swift */,
 				E435553E1E0DD5F700B59F19 /* MWBalloonLabel.swift */,
-				E435553A1E0DD5F700B59F19 /* MWBalloonProfile.swift */,
 			);
 			path = Classes;
 			sourceTree = SOURCE_ROOT;
@@ -99,9 +101,22 @@
 		E435554B1E0DD79400B59F19 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				E435553B1E0DD5F700B59F19 /* MWBalloonProtocol.swift */,
+				E435553B1E0DD5F700B59F19 /* MWBalloonProfileProtocol.swift */,
+				E4A7AD4D1E12DEA4004B651B /* MWBalloonTextFieldProfileProtocol.swift */,
 			);
 			name = Protocols;
+			path = ../Classes;
+			sourceTree = "<group>";
+		};
+		E4A7AD4C1E12DAC6004B651B /* Profiles */ = {
+			isa = PBXGroup;
+			children = (
+				E4A0536E1E130B9A00CDE82F /* MWDefaultBalloonTextFieldErrorProfile.swift */,
+				E4A0536C1E13097600CDE82F /* MWDefaultBalloonErrorProfile.swift */,
+				E4A7AD4F1E12E0B9004B651B /* MWDefaultBalloonTextFieldProfile.swift */,
+				E435553A1E0DD5F700B59F19 /* MWDefaultBalloonProfile.swift */,
+			);
+			name = Profiles;
 			path = ../Classes;
 			sourceTree = "<group>";
 		};
@@ -186,14 +201,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E43555421E0DD5F700B59F19 /* MWBalloonProfile.swift in Sources */,
+				E43555421E0DD5F700B59F19 /* MWDefaultBalloonProfile.swift in Sources */,
 				E43555461E0DD5F700B59F19 /* MWBalloonLabel.swift in Sources */,
-				E43555431E0DD5F700B59F19 /* MWBalloonProtocol.swift in Sources */,
-				E43555441E0DD5F700B59F19 /* MWBalloonBase.swift in Sources */,
-				E43555451E0DD5F700B59F19 /* MWBalloonDefault.swift in Sources */,
+				E43555431E0DD5F700B59F19 /* MWBalloonProfileProtocol.swift in Sources */,
+				E43555441E0DD5F700B59F19 /* MWBalloon.swift in Sources */,
+				E4A7AD4E1E12DEA4004B651B /* MWBalloonTextFieldProfileProtocol.swift in Sources */,
+				E4A7AD501E12E0B9004B651B /* MWDefaultBalloonTextFieldProfile.swift in Sources */,
+				E4A0536F1E130B9A00CDE82F /* MWDefaultBalloonTextFieldErrorProfile.swift in Sources */,
 				E43555471E0DD5F700B59F19 /* MWBalloonTextField.swift in Sources */,
-				E43555491E0DD5F700B59F19 /* MWErrorBalloon.swift in Sources */,
 				E43555481E0DD5F700B59F19 /* UIColor+init.swift in Sources */,
+				E4A0536D1E13097600CDE82F /* MWDefaultBalloonErrorProfile.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
