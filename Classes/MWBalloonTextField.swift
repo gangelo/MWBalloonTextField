@@ -9,6 +9,9 @@ import UIKit
 @IBDesignable public class MWBalloonTextField: UITextField {
    fileprivate var _imageView:UIView?
    
+   @IBInspectable var successImage:UIImage? = nil
+   @IBInspectable var errorImage:UIImage? = nil
+   
    override init(frame: CGRect) {
       super.init(frame: frame)
       self.initialize()
@@ -19,8 +22,15 @@ import UIKit
       self.initialize()
    }
    
-   @IBInspectable var successImage:UIImage? = nil
-   @IBInspectable var errorImage:UIImage? = nil
+   func initialize() {
+      if successImage == nil {
+         self.attachDefaultSuccessImage()
+      }
+      
+      if errorImage == nil {
+         self.attachDefaultErrorImage()
+      }
+   }
    
    fileprivate func getGetImageInBundle(named:String) -> UIImage? {
       let bundle = Bundle(for: type(of: self))
@@ -35,16 +45,6 @@ import UIKit
       self.successImage = self.getGetImageInBundle(named: "success")
    }
    
-   
-   func initialize() {
-      if successImage == nil {
-         self.attachDefaultSuccessImage()
-      }
-      
-      if errorImage == nil {
-         self.attachDefaultErrorImage()
-      }
-   }
    
    public func setWaiting() {
       self.clear()
@@ -74,22 +74,6 @@ import UIKit
    public func setSuccess() {
       self.clear()
       self.setImage(image: successImage)
-   }
-   
-   // Returns the value of where the balloon's arrow should be positioned.
-   fileprivate func getBalloonArrowPosition() -> CGFloat {
-      if let imageContainer = self._imageView {
-         if let image = imageContainer.subviews.first {
-            
-            let imageViewPos = CGFloat((image.frame.width / 2) / 2)
-            let imageViewContainerPos = CGFloat(imageContainer.frame.width / 2)
-            
-            return self.frame.width - (imageViewPos + imageViewContainerPos)
-         }
-      }
-      
-      // Default is center
-      return self.frame.width / 2
    }
    
    public func setError(error:String) {
@@ -191,6 +175,22 @@ import UIKit
    
    override public func draw(_ rect: CGRect) {
       super.draw(rect)
+   }
+   
+   // Returns the value of where the balloon's arrow should be positioned.
+   fileprivate func getBalloonArrowPosition() -> CGFloat {
+      if let imageContainer = self._imageView {
+         if let image = imageContainer.subviews.first {
+            
+            let imageViewPos = CGFloat((image.frame.width / 2) / 2)
+            let imageViewContainerPos = CGFloat(imageContainer.frame.width / 2)
+            
+            return self.frame.width - (imageViewPos + imageViewContainerPos)
+         }
+      }
+      
+      // Default is center
+      return self.frame.width / 2
    }
 }
 
