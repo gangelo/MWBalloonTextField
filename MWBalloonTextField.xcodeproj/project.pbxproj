@@ -17,6 +17,7 @@
 		E43555481E0DD5F700B59F19 /* UIColor+init.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43555401E0DD5F700B59F19 /* UIColor+init.swift */; };
 		E4A0536D1E13097600CDE82F /* MWDefaultBalloonErrorProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A0536C1E13097600CDE82F /* MWDefaultBalloonErrorProfile.swift */; };
 		E4A0536F1E130B9A00CDE82F /* MWDefaultBalloonTextFieldErrorProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A0536E1E130B9A00CDE82F /* MWDefaultBalloonTextFieldErrorProfile.swift */; };
+		E4A053711E13437100CDE82F /* MWBalloonTextFieldBottomBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A053701E13437100CDE82F /* MWBalloonTextFieldBottomBorder.swift */; };
 		E4A7AD4E1E12DEA4004B651B /* MWBalloonTextFieldProfileProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A7AD4D1E12DEA4004B651B /* MWBalloonTextFieldProfileProtocol.swift */; };
 		E4A7AD501E12E0B9004B651B /* MWDefaultBalloonTextFieldProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A7AD4F1E12E0B9004B651B /* MWDefaultBalloonTextFieldProfile.swift */; };
 /* End PBXBuildFile section */
@@ -34,6 +35,7 @@
 		E43555401E0DD5F700B59F19 /* UIColor+init.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+init.swift"; sourceTree = "<group>"; };
 		E4A0536C1E13097600CDE82F /* MWDefaultBalloonErrorProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MWDefaultBalloonErrorProfile.swift; sourceTree = "<group>"; };
 		E4A0536E1E130B9A00CDE82F /* MWDefaultBalloonTextFieldErrorProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MWDefaultBalloonTextFieldErrorProfile.swift; sourceTree = "<group>"; };
+		E4A053701E13437100CDE82F /* MWBalloonTextFieldBottomBorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MWBalloonTextFieldBottomBorder.swift; sourceTree = "<group>"; };
 		E4A7AD4D1E12DEA4004B651B /* MWBalloonTextFieldProfileProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MWBalloonTextFieldProfileProtocol.swift; sourceTree = "<group>"; };
 		E4A7AD4F1E12E0B9004B651B /* MWDefaultBalloonTextFieldProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MWDefaultBalloonTextFieldProfile.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -83,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				E435553F1E0DD5F700B59F19 /* MWBalloonTextField.swift */,
+				E4A053701E13437100CDE82F /* MWBalloonTextFieldBottomBorder.swift */,
 				E435553C1E0DD5F700B59F19 /* MWBalloon.swift */,
 				E435553E1E0DD5F700B59F19 /* MWBalloonLabel.swift */,
 			);
@@ -112,8 +115,8 @@
 			isa = PBXGroup;
 			children = (
 				E4A0536E1E130B9A00CDE82F /* MWDefaultBalloonTextFieldErrorProfile.swift */,
-				E4A0536C1E13097600CDE82F /* MWDefaultBalloonErrorProfile.swift */,
 				E4A7AD4F1E12E0B9004B651B /* MWDefaultBalloonTextFieldProfile.swift */,
+				E4A0536C1E13097600CDE82F /* MWDefaultBalloonErrorProfile.swift */,
 				E435553A1E0DD5F700B59F19 /* MWDefaultBalloonProfile.swift */,
 			);
 			name = Profiles;
@@ -203,6 +206,7 @@
 			files = (
 				E43555421E0DD5F700B59F19 /* MWDefaultBalloonProfile.swift in Sources */,
 				E43555461E0DD5F700B59F19 /* MWBalloonLabel.swift in Sources */,
+				E4A053711E13437100CDE82F /* MWBalloonTextFieldBottomBorder.swift in Sources */,
 				E43555431E0DD5F700B59F19 /* MWBalloonProfileProtocol.swift in Sources */,
 				E43555441E0DD5F700B59F19 /* MWBalloon.swift in Sources */,
 				E4A7AD4E1E12DEA4004B651B /* MWBalloonTextFieldProfileProtocol.swift in Sources */,

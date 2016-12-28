@@ -6,7 +6,7 @@
 //
 import UIKit
 
-@IBDesignable public class MWBalloonTextField: UITextField {
+public class MWBalloonTextField: UITextField {
    fileprivate var _textFieldProfile:MWBalloonTextFieldProfileProtocol = MWDefaultBalloonTextFieldErrorProfile()
    fileprivate var _balloonProfile:MWBalloonProfileProtocol = MWDefaultBalloonErrorProfile()
    fileprivate var _imageView:UIView?
@@ -130,10 +130,6 @@ import UIKit
    
    func tap(_ gestureRecognizer: UITapGestureRecognizer) {
       self.clear()
-   }
-   
-   override public func draw(_ rect: CGRect) {
-      super.draw(rect)
    }
    
    // Returns the value of where the balloon's arrow should be positioned.
