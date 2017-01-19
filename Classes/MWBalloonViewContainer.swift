@@ -1,30 +1,32 @@
 //
-//  MWBalloonTextField.swift
+//  MWBalloonViewContainer.swift
+//  MWBalloonTextField
 //
-//  Created by Gene M. Angelo  Jr. on 9/11/16.
-//  Copyright © 2016 Mohojo Werks LLC. All rights reserved.
+//  Created by Gene M. Angelo  Jr. on 1/19/17.
+//  Copyright © 2017 Mohojo Werks LLC. All rights reserved.
 //
+
 import UIKit
 
-public class MWBalloonTextField: UITextField {
-   fileprivate var _textFieldProfile:MWBalloonImagesProtocol = MWDefaultBalloonTextFieldErrorProfile()
+/*
+public class MWBalloonViewContainer: UIView {
+
    fileprivate var _balloonProfile:MWBalloonProfileProtocol = MWDefaultBalloonErrorProfile()
    fileprivate var _imageView:UIView?
    
    override init(frame: CGRect) {
       super.init(frame: frame)
    }
-
+   
    required public init(coder aDecoder: NSCoder) {
       super.init(coder: aDecoder)!
    }
    
    // Attaches a profile to this text field.
-   open func attach(textFieldProfile:MWBalloonImagesProtocol, balloonProfile:MWBalloonProfileProtocol) {
-      self._textFieldProfile = textFieldProfile
+   open func attach(balloonProfile:MWBalloonProfileProtocol) {
       self._balloonProfile = balloonProfile
    }
-   
+
    public func setWaiting() {
       self.clear()
       let imageView = self._textFieldProfile.waitingImageView
@@ -66,7 +68,7 @@ public class MWBalloonTextField: UITextField {
       // the balloon.
       var labelFrame = self.frame.offsetBy(dx: 0, dy: self.frame.height)
       labelFrame.origin.y = labelFrame.origin.y + errorBalloon.arrowSize.height
-
+      
       let errorLabel = MWBalloonLabel(frame: labelFrame, textColor: errorBalloon.textColor, fontSize: errorBalloon.fontSize)
       errorBalloon.addSubview(errorLabel)
       setErrorLabelConstraints(errorLabel: errorLabel, errorBalloon: errorBalloon)
@@ -148,5 +150,4 @@ public class MWBalloonTextField: UITextField {
       return self.frame.width / 2
    }
 }
-
-
+ */

@@ -1,5 +1,5 @@
 //
-//  MWBalloonTextFieldProfileProtocol.swift
+//  MWBalloonImagesProtocol.swift
 //  MWBalloonTextField
 //
 //  Created by Gene M. Angelo  Jr. on 12/27/16.
@@ -9,13 +9,13 @@
 import UIKit
 import Foundation
 
-public protocol MWBalloonTextFieldProfileProtocol {
+public protocol MWBalloonImagesProtocol {
    var errorImage:UIImage { get set }
    var successImage:UIImage { get set }
    var waitingImageView:UIImageView { get set }
 }
 
-public extension MWBalloonTextFieldProfileProtocol {
+public extension MWBalloonImagesProtocol {
    public mutating func setImages(error:UIImage? = nil, success:UIImage? = nil, waiting:UIImageView? = nil) {
       self.errorImage = error ?? self.getDefaultErrorImage()
       self.successImage = success ?? self.getDefaultSuccessImage()

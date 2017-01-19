@@ -34,7 +34,8 @@ class MWBalloon: UIView, MWBalloonProfileProtocol {
       self._profile = profile
    }
    
-   func setFrame(balloonTextField:MWBalloonTextField) {
+   // GMA func setFrame(balloonTextField:MWBalloonTextField) {
+   func setFrame(balloonTextField:UIView) {
       let arrowSize = self._profile.arrowSize
       
       let newFrame = CGRect(x: balloonTextField.frame.origin.x, y: balloonTextField.frame.origin.y + balloonTextField.frame.height + 1, width: balloonTextField.frame.width, height: balloonTextField.frame.height + arrowSize.height)
@@ -85,6 +86,7 @@ class MWBalloon: UIView, MWBalloonProfileProtocol {
       self._profile.balloonBackgroundColor.setFill()
       
       let x = self._profile.arrowPosition
+      //let x = self.frame.width / 2
       let arrowSize = self._profile.arrowSize
       
       let path = UIBezierPath()

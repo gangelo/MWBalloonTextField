@@ -9,7 +9,7 @@
 import UIKit
 import Foundation
 
-public class MWDefaultBalloonTextFieldProfile: MWBalloonTextFieldProfileProtocol {
+public class MWDefaultBalloonTextFieldProfile: MWBalloonImagesProtocol {
    fileprivate var _errorImage:UIImage?
    fileprivate var _successImage:UIImage?
    fileprivate var _waitingImageView:UIImageView?
@@ -24,7 +24,7 @@ public class MWDefaultBalloonTextFieldProfile: MWBalloonTextFieldProfileProtocol
       self._waitingImageView = waitingImageView
    }
    
-   // MARK: - MWBalloonTextFieldProfileProtocol - start
+   // MARK: - MWBalloonImagesProtocol - start
    
    public var errorImage:UIImage {
       get {
@@ -53,5 +53,5 @@ public class MWDefaultBalloonTextFieldProfile: MWBalloonTextFieldProfileProtocol
       }
    }
    
-   // MWBalloonTextFieldProfileProtocol - end
+   // MWBalloonImagesProtocol - end
 }
