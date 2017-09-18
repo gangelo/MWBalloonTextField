@@ -8,9 +8,8 @@
 
 import UIKit
 
-/*
 public class MWBalloonViewContainer: UIView {
-
+ fileprivate var _textFieldProfile:MWBalloonImagesProtocol = MWDefaultBalloonTextFieldErrorProfile()
    fileprivate var _balloonProfile:MWBalloonProfileProtocol = MWDefaultBalloonErrorProfile()
    fileprivate var _imageView:UIView?
    
@@ -93,8 +92,8 @@ public class MWBalloonViewContainer: UIView {
       self._imageView?.addSubview(imageView)
       self._imageView?.frame = CGRect(x: 0, y: 0, width: 18, height: 12)
       
-      self.rightView = self._imageView
-      self.rightViewMode = .always
+      //self.rightView = self._imageView
+      //self.rightViewMode = .always
    }
    
    func setErrorLabelConstraints(errorLabel:MWBalloonLabel, errorBalloon:MWBalloon) {
@@ -150,4 +149,3 @@ public class MWBalloonViewContainer: UIView {
       return self.frame.width / 2
    }
 }
- */
